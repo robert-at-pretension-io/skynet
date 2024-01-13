@@ -1,16 +1,23 @@
 import ast
 import inspect
 import importlib
+from openai_call import return_gpt_response
 
 def addition(a: int, b: int):
     return a + b
 
-def load_functions_from_file(file_path):
+import ast
+import inspect
+import importlib
+
+from ..system_objects.functions import FunctionInfo
+
+def load_functions_from_file(file_path) -> [FunctionInfo]:
     with open(file_path, 'r') as file:
         file_contents = file.read()
 
     tree = ast.parse(file_contents)
-    functions = {}
+    functions = []
     imported_modules = {}
 
     for node in ast.walk(tree):
@@ -30,9 +37,18 @@ def load_functions_from_file(file_path):
             func = temp_namespace[func_name]
             sig = inspect.signature(func)
             arg_types = {param_name: param.annotation for param_name, param in sig.parameters.items()}
-            functions[func_name] = {'function': func, 'arg_types': arg_types}
+
+            # Get source code of the function
+            source_code = inspect.getsource(func)
+
+
+            function_info = FunctionInfo(func_name, file_path, source_code, "")
+
+
+            functions.append(function_info)
 
     return functions
+
 
 def list_functions(functions):
     print("Available functions:")
@@ -73,32 +89,43 @@ def get_argument_values(arg_types):
         args.append(converted_value)
     return args
 
-file_path = 'get_functions.py'  # Replace with your file path
-loaded_functions = load_functions_from_file(file_path)
+# file_path = 'get_functions.py'  # Replace with your file path
+# loaded_functions = load_functions_from_file(file_path)
 
-# Loop to ask which function to run
-while True:
-    list_functions(loaded_functions)
-    func_name = input("Enter the function name to run (or 'exit' to quit): ")
+# # Loop to ask which function to run
+# while True:
+#     list_functions(loaded_functions)
+#     func_name = input("Enter the function name to run (or 'exit' to quit): ")
     
-    if func_name.lower() == 'exit':
-        break
+#     if func_name.lower() == 'exit':
+#         break
 
-    if func_name in loaded_functions:
-        func_info = loaded_functions[func_name]
-        func = func_info['function']
-        arg_types = func_info['arg_types']
+#     if func_name in loaded_functions:
+#         func_info = loaded_functions[func_name]
+#         func = func_info['function']
+#         arg_types = func_info['arg_types']
 
-        print(f"Function: {func_name}, Argument Types: {arg_types}")
+#         print(f"Function: {func_name}, Argument Types: {arg_types}")
 
-        # Call the function to get argument values
-        args = get_argument_values(arg_types)
-        kwargs = {}  # Currently, we are not handling keyword arguments
+#         # Call the function to get argument values
+#         args = get_argument_values(arg_types)
+#         kwargs = {}  # Currently, we are not handling keyword arguments
 
-        # These arguments are already converted to the correct type, no need for eval
-        converted_args = args
+#         # These arguments are already converted to the correct type, no need for eval
+#         converted_args = args
 
-        result = func(*converted_args, **kwargs)
-        print("Result:", result)
-    else:
-        print(f"Function '{func_name}' not found.")
+#         result = func(*converted_args, **kwargs)
+#         print("Result:", result)
+#     else:
+#         print(f"Function '{func_name}' not found.")
+
+def describe_function(function_string):
+    """Returns a description of the function."""
+    # Formulate prompt to GPT:
+    prompt = f"""Describe the function, using the input variables. Make the description succinct though covering its entire functionalijty using plain english: 
+    
+    {function_string}
+    
+    Description:"""
+
+    return_gpt_response(prompt=prompt);
