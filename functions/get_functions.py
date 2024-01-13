@@ -127,5 +127,7 @@ def describe_function(function_string):
     {function_string}
     
     Description:"""
-
-    return_gpt_response(prompt=prompt);
+    try:
+        return return_gpt_response(prompt=prompt);
+    except:
+        raise ValueError("Error describing function.")

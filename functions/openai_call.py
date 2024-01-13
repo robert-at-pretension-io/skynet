@@ -1,3 +1,4 @@
+import json
 from openai import OpenAI
 import os
 
@@ -29,7 +30,7 @@ client = OpenAI(
 
 
 
-def return_gpt_response(message_log = [], prompt = "", model = ""):
+def return_gpt_response(message_log = [], prompt = "", model = "", return_json_oject = False):
     # If both are empty, throw error
     if message_log == [] and prompt == "":
         raise ValueError("Both message_log and prompt cannot be empty when calling return_chat_response.")
@@ -41,11 +42,24 @@ def return_gpt_response(message_log = [], prompt = "", model = ""):
     if prompt != "":
         message_log.append({"role": "user", "content": prompt})
     # Send the message log to the AI
-    chat_completion = client.chat.completions.create(
-        model=model,
-        messages=message_log
-    )
-    # Add the response to the message log
-    return chat_completion.choices[0].message.content
+        
+    if return_json_oject:
+        chat_completion = client.chat.completions.create(
+            model=model,
+            messages=message_log,
+            response_format='json_object'
+        )
+        try:
+            return_value = json.loads(chat_completion.choices[0].message.content)
+            return return_value
+        except:
+            raise ValueError("The response from the AI could not be converted to a json object.")
+    else:
+        chat_completion = client.chat.completions.create(
+            model=model,
+            messages=message_log,
+            response_format='json_object'
+        )
+        return chat_completion.choices[0].message.content
 
 

@@ -1,5 +1,8 @@
 import json
 import inspect
+import logging
+
+logger = logging.getLogger(__name__)
 
 class FunctionInfo:
     def __init__(self, function_name, file_location, source_code, description):
@@ -49,6 +52,7 @@ def load_function_infos_from_file(file_path):
     - A list of FunctionInfo instances.
     """
     try:
+        logger.info(f"Loading function infos from {file_path}")
         with open(file_path, 'r') as file:
             serialized_function_infos = json.load(file)
             return [FunctionInfo.deserialize(json_str) for json_str in serialized_function_infos]
@@ -68,6 +72,7 @@ def save_function_infos_to_file(function_infos, file_path):
     - file_path: The path to the file where the data will be saved.
     """
     try:
+        logger.info(f"Saving function infos to {file_path}")
         with open(file_path, 'w') as file:
             json.dump(function_infos, file)
     except IOError as e:
