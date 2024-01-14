@@ -36,7 +36,7 @@ client = OpenAI(
 
 
 
-def return_gpt_response(message_log = [], prompt = "", model = "", return_json_oject = False):
+def return_gpt_response(message_log = [], prompt = "", model = "", return_json_oject = False, retry_count = 0):
     # If both are empty, throw error
     if message_log == [] and prompt == "":
         raise ValueError("Both message_log and prompt cannot be empty when calling return_chat_response.")
@@ -61,7 +61,12 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
             return_value = json.loads(chat_completion.choices[0].message.content)
             return return_value
         except:
-            raise ValueError("The response from the AI could not be converted to a json object.")
+            if retry_count <= 0:
+                logger.error("The response from the AI could not be converted to a json object.")
+                raise ValueError("The response from the AI could not be converted to a json object.")
+            else:
+                logger.log("Couldn't parse response from AI to json object. Re-trying")
+                return return_gpt_response(message_log, prompt, model, return_json_oject, retry_count - 1)
     else:
         chat_completion = client.chat.completions.create(
             model=model,

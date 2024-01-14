@@ -10,3 +10,6 @@ This time... it'll be: public, incremental, well advertised.
 
 ## Windows
 - Good luck.
+
+# TODO:
+- Use a hash function to encode if the loaded function has changed since the description was formed when serialized. Otherwise, the description should be re-generated.

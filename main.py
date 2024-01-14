@@ -1,9 +1,9 @@
 
 from functions.get_functions import load_functions_from_file
 
-from functions.prompt_creation import create_step_list, describe_function
+from functions.prompt_creation import create_function, create_step_list, describe_function
 
-from functions.file_system_primitives import list_files_in_directory, set_env_variables_with_defaults
+from functions.file_system_primitives import append_to_file, list_files_in_directory, set_env_variables_with_defaults
 
 from system_objects.functions import FunctionInfo, load_function_infos_from_file, save_function_infos_to_file
 
@@ -18,8 +18,8 @@ logger = logging.getLogger(__name__)
 
 env_vars_defaults = {
     "OPENAI_API_KEY": "error",
-    "DEFAULT_GPT_MODEL": "gpt-3.5-turbo-1106",
-    # "DEFAULT_GPT_MODEL": "gpt-4-1106-preview",
+    # "DEFAULT_GPT_MODEL": "gpt-3.5-turbo-1106",
+    "DEFAULT_GPT_MODEL": "gpt-4-1106-preview",
     "FUNCTIONS_FOLDER": "functions",
     "FUNCTION_INFO_SERIALIZATION_FILES": "serialized_function_info.json",
 }
@@ -117,8 +117,24 @@ def main():
             try:
                 json_object = create_step_list(user_input)
                 print(f"Here are the functions needed to accomplish {user_input}:")
-                for required_function in json_object["function_list"]:
+                for required_function in json_object["function_descriptions"]:
                     print(required_function)
+
+                    # Create a function that accomplishes this task:
+                    function_def_json_object = create_function(required_function, "python")
+                    source_code = function_def_json_object["source_code"] + "\n\n"
+
+
+                    required_libraries = function_def_json_object["required_libraries"]
+                    # append the source code to a file ./functions/generated_functions.py
+
+                    for library in required_libraries:
+                        logger.info(f"Make sure the library {library} is installed")
+
+                    append_to_file("./functions/generated_functions.py", source_code)
+
+                    
+
 
             except: 
                 logger.error(f"Error creating step list for {user_input}")

@@ -21,31 +21,34 @@ def create_function(function_objective: str, language: str) -> object:
 
     required_libraries: a list of strings
 
-    source_code: a string
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
 
-    The source code should ONLY be the function definition, including the function definition and the function body.
+    JSON OBJECT:
     """
     try:
-        json_oject = return_gpt_response(prompt=prompt, return_json_oject=True)
-        if not required_fields(["required_libraries", "source_code"], json_oject):
+        json_object = return_gpt_response(prompt=prompt, return_json_oject=True, retry_count=3)
+        if not required_fields(["required_libraries", "source_code"], json_object):
             logger.error("The json object returned from the language model did not contain the required fields.")
             raise ValueError("The json object returned from GPT-3 did not contain the required fields.")
-        return json_oject
+        return json_object
     except Exception as e:
         raise ValueError(f"Error creating function: {e}")
 
 def create_step_list(goal: str) -> object:
-    prompt = f"""Create a list describing atomic functions that would need to be called to accomplishes the following: {goal}
+    prompt = f"""Describe the steps that would need to be called to accomplishes the following: {goal}
 
-    When coming up with this list, please try to describe "abstract" functions that will be re-useable for other purposes
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
 
-    The json object returned should have the following properties:
+    return a JSON object with the following property
     
-    function_list: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do."""
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    """
     try:
         json_object =  return_gpt_response(prompt=prompt, return_json_oject=True)
 
-        if not required_fields(["function_list"], json_object):
+        if not required_fields(["function_descriptions"], json_object):
             logger.error("The json object returned from the language model did not contain the required fields.")
             raise ValueError("The json object returned from GPT-3 did not contain the required fields.")
         return json_object

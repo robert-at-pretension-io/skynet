@@ -2070,3 +2070,1060 @@ Create a list describing atomic functions that would need to be called to accomp
 2024-01-14 13:04:31,592 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='     {\n       "function_list": [\n          "Authenticate User: Validate the user\'s credentials with Twitter\'s API.",\n          "Format Tweet: Prepare the text content of the tweet, ensuring it meets character limits and encoding requirements.",\n          "Check Media Attachments: If the tweet includes media, verify the format and size, and prepare for upload.",\n          "Upload Media: Send media files to Twitter\'s servers and obtain media identifiers if applicable.",\n          "Compose Tweet Data: Combine text content with media identifiers and additional metadata (like reply status, location, etc.) into the required format.",\n          "Post Tweet: Send the composed tweet to Twitter\'s API endpoint for posting new tweets.",\n          "Handle Response: Interpret the response from Twitter\'s API to determine success or failure of the tweet posting.",\n          "Parse Response Data: Extract relevant data from the API response to return a json object with tweet details.",\n          "Error Handling: Manage errors and exceptions that occur during the process and provide meaningful feedback.",\n          "Log Activity: Record the operation\'s details such as timestamp, success/failure status, and error messages if any."\n        ]\n    }\n', role='assistant', function_call=None, tool_calls=None)) to json object
 2024-01-14 13:06:13,830 - DEBUG - httpcore.connection - close.started
 2024-01-14 13:06:13,904 - DEBUG - httpcore.connection - close.complete
+2024-01-14 13:48:04,784 - INFO - __main__ - Skynet started
+2024-01-14 13:48:04,784 - INFO - __main__ - Loading environment variables
+2024-01-14 13:48:04,784 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 13:48:04,785 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 13:48:04,785 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 13:48:04,785 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 13:48:04,785 - INFO - __main__ - Loaded functions from functions
+2024-01-14 13:48:04,785 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 13:48:04,786 - INFO - functions.get_functions - file size: 2609
+2024-01-14 13:48:04,787 - INFO - functions.get_functions - tree size: 16
+2024-01-14 13:48:05,157 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 13:48:05,331 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 13:48:05,333 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 13:48:05,333 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 13:48:05,333 - INFO - functions.get_functions - file size: 2493
+2024-01-14 13:48:05,334 - INFO - functions.get_functions - tree size: 7
+2024-01-14 13:48:05,334 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 13:48:05,337 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 13:48:05,337 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 13:48:05,337 - INFO - functions.get_functions - file size: 2971
+2024-01-14 13:48:05,339 - INFO - functions.get_functions - tree size: 10
+2024-01-14 13:48:05,339 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 13:48:05,342 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 13:48:05,342 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 13:48:05,343 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 13:48:05,344 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 13:48:05,351 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 13:48:05,352 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 13:48:05,353 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 13:48:05,354 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 13:48:05,354 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:48:05,354 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:48:05,354 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 13:48:05,354 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 13:48:05,354 - INFO - functions.get_functions - file size: 3266
+2024-01-14 13:48:05,355 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:48:05,355 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 13:48:05,356 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 13:48:05,357 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 13:48:05,357 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 13:48:05,358 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 13:48:05,359 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 13:48:05,359 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 13:48:05,359 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:48:05,359 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:48:05,359 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 13:48:05,360 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 13:48:05,360 - INFO - functions.get_functions - file size: 5276
+2024-01-14 13:48:05,362 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:48:05,362 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 13:48:05,364 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 13:48:05,365 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 13:48:05,368 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 13:48:05,368 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 13:48:05,368 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 13:48:05,369 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 13:48:11,747 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a list describing atomic functions that would need to be called to accomplishes the following: Post a tweet to twitter
+
+    When coming up with this list, please try to describe "abstract" functions that will be re-useable for other purposes
+
+    The json object returned should have the following properties:
+    
+    function_list: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+
+
+2024-01-14 13:48:11,753 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Create a list describing atomic functions that would need to be called to accomplishes the following: Post a tweet to twitter\n\n    When coming up with this list, please try to describe "abstract" functions that will be re-useable for other purposes\n\n    The json object returned should have the following properties:\n    \n    function_list: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.'}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 13:48:11,813 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 13:48:11,953 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fdbd3d65ad0>
+2024-01-14 13:48:11,954 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fdbd3efa570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 13:48:12,195 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fdbd3d67090>
+2024-01-14 13:48:12,196 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 13:48:12,196 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 13:48:12,196 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 13:48:12,196 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 13:48:12,197 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 13:49:15,465 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 18:49:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'63076'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79858'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'106ms'), (b'x-request-id', b'e6bee38554a1f1f2bf0f196bfd29d440'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=JiVq1bt6amxyg.uIVZRkXW6qsoiElhV8OyNhL6FxAdo-1705258155-1-AS4X4/+HJxVTOsjTnwifW/QgGQQXHgv2YRpHOekUxWARPMxE9mskAx5fHhiNfFGChVYDULjFpT1T8/q47oYMz/E=; path=/; expires=Sun, 14-Jan-24 19:19:15 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=7fwcrY_mBANPjfFDwdyRMDe1vKP4jpPGXXQbYQwWY4U-1705258155428-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84580d4498567d00-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 13:49:15,467 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 13:49:15,468 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 13:49:15,469 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 13:49:15,469 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 13:49:15,469 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 13:49:15,469 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 13:49:15,474 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='        \n\n     \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n        \n  \n\n       \n  \n\n       \n  \n\n       \n  \n\n      \n  \n\n     \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n  \n\n    \n\n  \n\n  \n\n  \n  \n\n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  \n  \n\n  ', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 13:49:15,474 - ERROR - functions.openai_call - The response from the AI could not be converted to a json object.
+2024-01-14 13:49:15,474 - ERROR - __main__ - Error creating step list for Post a tweet to twitter
+2024-01-14 13:49:15,643 - DEBUG - httpcore.connection - close.started
+2024-01-14 13:49:15,644 - DEBUG - httpcore.connection - close.complete
+2024-01-14 13:57:54,784 - INFO - __main__ - Skynet started
+2024-01-14 13:57:54,786 - INFO - __main__ - Loading environment variables
+2024-01-14 13:57:54,786 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 13:57:54,786 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 13:57:54,786 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 13:57:54,786 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 13:57:54,786 - INFO - __main__ - Loaded functions from functions
+2024-01-14 13:57:54,786 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 13:57:54,786 - INFO - functions.get_functions - file size: 2609
+2024-01-14 13:57:54,788 - INFO - functions.get_functions - tree size: 16
+2024-01-14 13:57:54,962 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 13:57:55,118 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 13:57:55,120 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 13:57:55,120 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 13:57:55,121 - INFO - functions.get_functions - file size: 2493
+2024-01-14 13:57:55,121 - INFO - functions.get_functions - tree size: 7
+2024-01-14 13:57:55,122 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 13:57:55,126 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 13:57:55,127 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 13:57:55,128 - INFO - functions.get_functions - file size: 2971
+2024-01-14 13:57:55,129 - INFO - functions.get_functions - tree size: 10
+2024-01-14 13:57:55,130 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 13:57:55,131 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 13:57:55,132 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 13:57:55,133 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 13:57:55,133 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 13:57:55,134 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 13:57:55,135 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 13:57:55,136 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 13:57:55,137 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 13:57:55,137 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:57:55,138 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:57:55,138 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 13:57:55,138 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 13:57:55,138 - INFO - functions.get_functions - file size: 3250
+2024-01-14 13:57:55,139 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:57:55,140 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 13:57:55,141 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 13:57:55,143 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 13:57:55,144 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 13:57:55,145 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 13:57:55,146 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 13:57:55,147 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 13:57:55,147 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:57:55,147 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:57:55,148 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 13:57:55,148 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 13:57:55,148 - INFO - functions.get_functions - file size: 5276
+2024-01-14 13:57:55,150 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:57:55,150 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 13:57:55,153 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 13:57:55,154 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 13:57:55,157 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 13:57:55,158 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 13:57:55,159 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 13:57:55,162 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 13:58:14,090 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Tweet on twitter
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 13:58:14,098 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet on twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 13:58:14,167 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 13:58:20,334 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fba62322b50>
+2024-01-14 13:58:20,334 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fba62c9a570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 13:58:20,580 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fba62334290>
+2024-01-14 13:58:20,580 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 13:58:20,581 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 13:58:20,581 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 13:58:20,581 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 13:58:20,581 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 13:58:22,484 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 18:58:22 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1618'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79864'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'102ms'), (b'x-request-id', b'ae30080f6334978032d44d6dae98359c'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=_nIKPm0O86rUxxEFrcO6C._yPR.8L2z.LNHT.41AhUw-1705258702-1-Adj7oUtukXfaay95ck8GSCKur+IxQrQUjhvOwgs3Qk+4kU/SvD2OwFTUDFBAxFzTlSfIDzFZI44GLFSQZp64leI=; path=/; expires=Sun, 14-Jan-24 19:28:22 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=IYL5m2VyjTbRa0jZwsPzmNVoOW9fqqxCDXuFOTJljj0-1705258702441-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84581c1f7e8d43d3-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 13:58:22,488 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 13:58:22,490 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 13:58:22,491 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 13:58:22,493 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 13:58:22,494 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 13:58:22,495 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 13:58:22,530 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Open Twitter app or website",\n    "Authenticate user\'s login credentials",\n    "Navigate to the Tweet section",\n    "Compose the tweet message",\n    "Click \'Tweet\'",\n    "Return confirmation or error message"\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 13:58:22,531 - ERROR - functions.prompt_creation - The json object returned from the language model did not contain the required fields.
+2024-01-14 13:58:22,532 - ERROR - __main__ - Error creating step list for Tweet on twitter
+2024-01-14 13:58:22,691 - DEBUG - httpcore.connection - close.started
+2024-01-14 13:58:22,693 - DEBUG - httpcore.connection - close.complete
+2024-01-14 13:59:00,600 - INFO - __main__ - Skynet started
+2024-01-14 13:59:00,600 - INFO - __main__ - Loading environment variables
+2024-01-14 13:59:00,601 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 13:59:00,601 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 13:59:00,601 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 13:59:00,601 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 13:59:00,602 - INFO - __main__ - Loaded functions from functions
+2024-01-14 13:59:00,602 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 13:59:00,602 - INFO - functions.get_functions - file size: 2609
+2024-01-14 13:59:00,603 - INFO - functions.get_functions - tree size: 16
+2024-01-14 13:59:00,737 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 13:59:00,838 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 13:59:00,840 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 13:59:00,840 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 13:59:00,840 - INFO - functions.get_functions - file size: 2493
+2024-01-14 13:59:00,841 - INFO - functions.get_functions - tree size: 7
+2024-01-14 13:59:00,841 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 13:59:00,843 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 13:59:00,844 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 13:59:00,844 - INFO - functions.get_functions - file size: 2971
+2024-01-14 13:59:00,845 - INFO - functions.get_functions - tree size: 10
+2024-01-14 13:59:00,845 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 13:59:00,846 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 13:59:00,847 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 13:59:00,847 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 13:59:00,847 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 13:59:00,848 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 13:59:00,849 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 13:59:00,850 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 13:59:00,850 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 13:59:00,850 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:59:00,851 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:59:00,851 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 13:59:00,851 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 13:59:00,851 - INFO - functions.get_functions - file size: 3258
+2024-01-14 13:59:00,852 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:59:00,852 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 13:59:00,852 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 13:59:00,853 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 13:59:00,854 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 13:59:00,854 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 13:59:00,856 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 13:59:00,856 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 13:59:00,856 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:59:00,856 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:59:00,856 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 13:59:00,856 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 13:59:00,856 - INFO - functions.get_functions - file size: 5276
+2024-01-14 13:59:00,858 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:59:00,858 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 13:59:00,860 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 13:59:00,861 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 13:59:00,863 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 13:59:00,863 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 13:59:00,864 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 13:59:00,865 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 13:59:05,719 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Tweet on twitter
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 13:59:05,727 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet on twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 13:59:05,744 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 13:59:05,896 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fc775b1fb10>
+2024-01-14 13:59:05,896 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fc776272570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 13:59:06,000 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fc7760e6550>
+2024-01-14 13:59:06,000 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 13:59:06,000 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 13:59:06,001 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 13:59:06,001 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 13:59:06,001 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 13:59:08,456 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 18:59:08 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'2223'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79864'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'102ms'), (b'x-request-id', b'266666f8bab4ce43f05784d839b16ebe'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=hlY_suCFg8lNDJgIHhidrRkVuTMm3PPsku9Azp_jnAA-1705258748-1-AXAPrk7uTrJL4ukh1UzIn8Ahb5Aoom4bsJ9l0DfUpFTZMUOYEHY1sCXnWezhEsQDDiU5CyGI9IaGLgNlm0BXmqw=; path=/; expires=Sun, 14-Jan-24 19:29:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=X0h0TE.zPg9OWOe4if7AeclVtSWXTrRUJExpVq9mEfE-1705258748458-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84581d3b593b6a57-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 13:59:08,458 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 13:59:08,458 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 13:59:08,458 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 13:59:08,459 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 13:59:08,459 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 13:59:08,459 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 13:59:08,462 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Authenticate user: This function verifies the user\'s login credentials and allows them to access the Twitter API.",\n    "Compose tweet: This function allows the user to input their tweet content and prepares it for posting.",\n    "Post tweet: This function sends the prepared tweet to Twitter\'s servers for posting.",\n    "Handle response: This function receives and processes the response from Twitter whether the tweet was successfully posted or if there was an error."\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 13:59:08,462 - ERROR - __main__ - Error creating step list for Tweet on twitter
+2024-01-14 13:59:08,586 - DEBUG - httpcore.connection - close.started
+2024-01-14 13:59:08,586 - DEBUG - httpcore.connection - close.complete
+2024-01-14 13:59:29,664 - INFO - __main__ - Skynet started
+2024-01-14 13:59:29,665 - INFO - __main__ - Loading environment variables
+2024-01-14 13:59:29,665 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 13:59:29,665 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 13:59:29,665 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 13:59:29,666 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 13:59:29,666 - INFO - __main__ - Loaded functions from functions
+2024-01-14 13:59:29,666 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 13:59:29,666 - INFO - functions.get_functions - file size: 2609
+2024-01-14 13:59:29,668 - INFO - functions.get_functions - tree size: 16
+2024-01-14 13:59:29,816 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 13:59:29,998 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 13:59:30,013 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 13:59:30,017 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 13:59:30,019 - INFO - functions.get_functions - file size: 2493
+2024-01-14 13:59:30,029 - INFO - functions.get_functions - tree size: 7
+2024-01-14 13:59:30,031 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 13:59:30,053 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 13:59:30,056 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 13:59:30,057 - INFO - functions.get_functions - file size: 2971
+2024-01-14 13:59:30,061 - INFO - functions.get_functions - tree size: 10
+2024-01-14 13:59:30,068 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 13:59:30,071 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 13:59:30,076 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 13:59:30,086 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 13:59:30,087 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 13:59:30,088 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 13:59:30,094 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 13:59:30,096 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 13:59:30,096 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 13:59:30,097 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:59:30,097 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:59:30,097 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 13:59:30,098 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 13:59:30,098 - INFO - functions.get_functions - file size: 3258
+2024-01-14 13:59:30,100 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:59:30,101 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 13:59:30,103 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 13:59:30,109 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 13:59:30,110 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 13:59:30,111 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 13:59:30,113 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 13:59:30,113 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 13:59:30,114 - INFO - functions.get_functions - file size: 0
+2024-01-14 13:59:30,115 - INFO - functions.get_functions - tree size: 0
+2024-01-14 13:59:30,115 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 13:59:30,116 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 13:59:30,116 - INFO - functions.get_functions - file size: 5276
+2024-01-14 13:59:30,130 - INFO - functions.get_functions - tree size: 9
+2024-01-14 13:59:30,131 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 13:59:30,133 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 13:59:30,134 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 13:59:30,139 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 13:59:30,140 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 13:59:30,141 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 13:59:30,144 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 13:59:34,640 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Tweet on twitter
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 13:59:34,648 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet on twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 13:59:34,664 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 13:59:39,887 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f1d4c3e85d0>
+2024-01-14 13:59:39,888 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f1d4cd52570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 13:59:40,605 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f1d4c748310>
+2024-01-14 13:59:40,606 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 13:59:40,607 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 13:59:40,607 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 13:59:40,607 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 13:59:40,607 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 13:59:42,351 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 18:59:42 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1528'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79864'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'102ms'), (b'x-request-id', b'5a6afdf298cc4e3a128d5f14ac2942ec'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=4fd13cEF0uqLod9A9d3eQAaoMTorRvI7eijWo.VNgx0-1705258782-1-AQqbkwXOb6aQsGavvmEFiiMNYvfBtoLZ2opwVgd9G2ZbsoFkw+A1hW1M1SpiTsakmmFeH+1uzA9dfx79P8kO/7s=; path=/; expires=Sun, 14-Jan-24 19:29:42 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=sKrZFtpHlUC8zfUkb1HKHItVjYhzWHMgy2NX3NTu22c-1705258782390-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84581e13ac7a4294-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 13:59:42,353 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 13:59:42,354 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 13:59:42,448 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 13:59:42,449 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 13:59:42,449 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 13:59:42,449 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 13:59:42,452 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Authenticate user on Twitter API",\n    "Compose tweet content",\n    "Post tweet using Twitter API"\n  ]\n}\n\n  \n     \n  \n\n  \n  \n  ', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:15:40,803 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:15:40,875 - DEBUG - httpcore.connection - close.complete
+2024-01-14 14:15:43,413 - INFO - __main__ - Skynet started
+2024-01-14 14:15:43,413 - INFO - __main__ - Loading environment variables
+2024-01-14 14:15:43,414 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 14:15:43,414 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 14:15:43,415 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 14:15:43,415 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 14:15:43,416 - INFO - __main__ - Loaded functions from functions
+2024-01-14 14:15:43,416 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 14:15:43,417 - INFO - functions.get_functions - file size: 2609
+2024-01-14 14:15:43,418 - INFO - functions.get_functions - tree size: 16
+2024-01-14 14:15:43,614 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 14:15:43,769 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 14:15:43,770 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 14:15:43,770 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 14:15:43,771 - INFO - functions.get_functions - file size: 2493
+2024-01-14 14:15:43,772 - INFO - functions.get_functions - tree size: 7
+2024-01-14 14:15:43,772 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 14:15:43,774 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 14:15:43,774 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 14:15:43,775 - INFO - functions.get_functions - file size: 2971
+2024-01-14 14:15:43,776 - INFO - functions.get_functions - tree size: 10
+2024-01-14 14:15:43,776 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 14:15:43,777 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 14:15:43,778 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 14:15:43,778 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 14:15:43,779 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 14:15:43,780 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 14:15:43,780 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 14:15:43,782 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 14:15:43,782 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 14:15:43,782 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:15:43,782 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:15:43,783 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 14:15:43,783 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 14:15:43,783 - INFO - functions.get_functions - file size: 3276
+2024-01-14 14:15:43,784 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:15:43,784 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 14:15:43,784 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 14:15:43,785 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 14:15:43,786 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 14:15:43,786 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 14:15:43,788 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 14:15:43,788 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 14:15:43,788 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:15:43,788 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:15:43,788 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 14:15:43,789 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 14:15:43,789 - INFO - functions.get_functions - file size: 5276
+2024-01-14 14:15:43,790 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:15:43,791 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 14:15:43,793 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 14:15:43,794 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 14:15:43,796 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 14:15:43,796 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 14:15:43,797 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 14:15:43,798 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 14:15:49,245 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: tweet to twitter
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:15:49,250 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: tweet to twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:15:49,347 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 14:15:49,552 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8e68edb550>
+2024-01-14 14:15:49,553 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8e69846570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 14:15:49,658 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8e68ed9ed0>
+2024-01-14 14:15:49,659 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:15:49,660 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:15:49,660 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:15:49,660 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:15:49,660 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:15:50,787 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:15:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'712'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79864'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'102ms'), (b'x-request-id', b'ce94d63a2524d51e253169629b53feab'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=xms3ltRG2hZHKwBV3s.Qmfy0tE3JLfmqWJPRO5x9nPM-1705259750-1-AdekSkv2udmNwhPn8ADFqmPCbtzwqTATr3GnbIifrEQKwq8lYcauMmhwkC/H1fXJhXW0lWNfp2wFxtLdU0SZD6k=; path=/; expires=Sun, 14-Jan-24 19:45:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=P8yVabvvcrvnM0TUQBwP6eUqUEV5ZrR_jfJnvTV59GQ-1705259750707-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845835bb6c987d18-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:15:50,789 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:15:50,789 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:15:51,190 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:15:51,190 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:15:51,191 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:15:51,191 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:15:51,222 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Authenticate user with Twitter API",\n    "Create function to format and send tweet content",\n    "Call function to send tweet"\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:15:51,223 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Authenticate user with Twitter API
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string
+
+    The source code should ONLY be the function definition, including the function definition and the function body.
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:15:51,230 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: tweet to twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Authenticate user with Twitter API\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string\n\n    The source code should ONLY be the function definition, including the function definition and the function body.\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:15:51,234 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:15:51,238 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:15:51,240 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:15:51,241 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:15:51,242 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:15:53,138 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:15:52 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1465'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79761'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'179ms'), (b'x-request-id', b'e3cb0fdf83f761062a61ff6fa6b46534'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845835c54a837d18-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:15:53,139 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:15:53,139 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:15:53,140 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:15:53,140 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:15:53,140 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:15:53,141 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:15:53,143 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Create function authenticate_user_twitter_API() to handle user authentication with the Twitter API"\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:15:53,144 - ERROR - functions.prompt_creation - The json object returned from the language model did not contain the required fields.
+2024-01-14 14:15:53,144 - ERROR - __main__ - Error creating step list for tweet to twitter
+2024-01-14 14:15:53,246 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:15:53,247 - DEBUG - httpcore.connection - close.complete
+2024-01-14 14:23:16,884 - INFO - __main__ - Skynet started
+2024-01-14 14:23:16,884 - INFO - __main__ - Loading environment variables
+2024-01-14 14:23:16,884 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 14:23:16,884 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 14:23:16,884 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 14:23:16,884 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 14:23:16,885 - INFO - __main__ - Loaded functions from functions
+2024-01-14 14:23:16,885 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 14:23:16,885 - INFO - functions.get_functions - file size: 2609
+2024-01-14 14:23:16,886 - INFO - functions.get_functions - tree size: 16
+2024-01-14 14:23:17,015 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 14:23:17,175 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 14:23:17,184 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 14:23:17,185 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 14:23:17,190 - INFO - functions.get_functions - file size: 2493
+2024-01-14 14:23:17,192 - INFO - functions.get_functions - tree size: 7
+2024-01-14 14:23:17,192 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 14:23:17,200 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 14:23:17,200 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 14:23:17,201 - INFO - functions.get_functions - file size: 2971
+2024-01-14 14:23:17,203 - INFO - functions.get_functions - tree size: 10
+2024-01-14 14:23:17,203 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 14:23:17,205 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 14:23:17,208 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 14:23:17,215 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 14:23:17,216 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 14:23:17,217 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 14:23:17,218 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 14:23:17,228 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 14:23:17,229 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 14:23:17,229 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:23:17,230 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:23:17,230 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 14:23:17,231 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 14:23:17,231 - INFO - functions.get_functions - file size: 3250
+2024-01-14 14:23:17,232 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:23:17,233 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 14:23:17,234 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 14:23:17,236 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 14:23:17,237 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 14:23:17,238 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 14:23:17,241 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 14:23:17,242 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 14:23:17,242 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:23:17,243 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:23:17,243 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 14:23:17,243 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 14:23:17,245 - INFO - functions.get_functions - file size: 5276
+2024-01-14 14:23:17,252 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:23:17,256 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 14:23:17,259 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 14:23:17,263 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 14:23:17,270 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 14:23:17,271 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 14:23:17,272 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 14:23:17,279 - INFO - __main__ - The following 18 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields']
+2024-01-14 14:23:21,294 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Tweet to twitter
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:23:21,341 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet to twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:23:21,362 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 14:23:22,584 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f89d11060d0>
+2024-01-14 14:23:22,584 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f89d129a570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 14:23:22,690 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f89d1106390>
+2024-01-14 14:23:22,690 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:22,691 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:23:22,691 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:23:22,692 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:23:22,692 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:24,429 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:23:24 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1575'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79864'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'102ms'), (b'x-request-id', b'fc73eb4dabecf36bbd2665b4120c1619'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=jAVo6ZHvyIcxRqMJK0ov3Pll8pCcAQqXzReJy1Wk_fM-1705260204-1-AfaNjYL1zcoJN3w2Vt8IDPI1/aM5cVBoFF3cS4E11QYAoHG0tpKCgJ7ukTw9rKSenfBDsI1zLfvKKc8uSL+cH0M=; path=/; expires=Sun, 14-Jan-24 19:53:24 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=LkBhHM.FFj8.P1gVN.z55nWwWAq1f7qrTgTIdVbQBlw-1705260204372-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845840cac9da72a7-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:23:24,431 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:23:24,431 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:23:24,431 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:23:24,432 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:23:24,432 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:23:24,432 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:23:24,435 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Initialize API credentials for Twitter",\n    "Create a function to format the tweet message",\n    "Create a function to authenticate with the Twitter API",\n    "Create a function to make the actual tweet"\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:23:24,435 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Initialize API credentials for Twitter
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:23:24,441 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet to twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize API credentials for Twitter\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:23:24,442 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:24,443 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:23:24,443 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:23:24,443 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:23:24,443 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:25,865 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:23:25 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'967'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79767'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'174ms'), (b'x-request-id', b'81c6f1a305f24f5ebc7d28ae1a4259bd'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845840d5bdb172a7-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:23:25,866 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:23:25,866 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:23:25,867 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:23:25,867 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:23:25,868 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:23:25,868 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:23:25,870 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "required_libraries": ["tweepy"],\n  "source_code": "def initialize_twitter_api(api_key, api_secret_key, access_token, access_token_secret):\\n    auth = tweepy.OAuthHandler(api_key, api_secret_key)\\n    auth.set_access_token(access_token, access_token_secret)\\n    api = tweepy.API(auth)\\n    return api"\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:23:25,871 - INFO - __main__ - Make sure the library tweepy is installed
+2024-01-14 14:23:25,871 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:23:25,872 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Create a function to format the tweet message
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:23:25,883 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Tweet to twitter\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize API credentials for Twitter\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Create a function to format the tweet message\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:23:25,886 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:25,887 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:23:25,888 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:23:25,888 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:23:25,890 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:23:28,224 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:23:27 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1768'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79668'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'249ms'), (b'x-request-id', b'37cf77909a5ab68f0bc746dfe778ff3f'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845840decc6172a7-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:23:28,226 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:23:28,226 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:23:28,227 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:23:28,228 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:23:28,229 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:23:28,229 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:23:28,233 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Initialize API credentials for Twitter. This function should store and return the necessary API credentials.",\n    "Create a function to format the tweet message. This function should take in parameters for the message and any additional formatting, and return the formatted message ready to be tweeted."\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:23:28,234 - ERROR - functions.prompt_creation - The json object returned from the language model did not contain the required fields.
+2024-01-14 14:23:28,236 - ERROR - __main__ - Error creating step list for Tweet to twitter
+2024-01-14 14:23:28,500 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:23:28,501 - DEBUG - httpcore.connection - close.complete
+2024-01-14 14:26:21,766 - INFO - __main__ - Skynet started
+2024-01-14 14:26:21,766 - INFO - __main__ - Loading environment variables
+2024-01-14 14:26:21,766 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-3.5-turbo-1106
+2024-01-14 14:26:21,767 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 14:26:21,767 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 14:26:21,767 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 14:26:21,767 - INFO - __main__ - Loaded functions from functions
+2024-01-14 14:26:21,767 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 14:26:21,767 - INFO - functions.get_functions - file size: 2609
+2024-01-14 14:26:21,768 - INFO - functions.get_functions - tree size: 16
+2024-01-14 14:26:22,034 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 14:26:22,175 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 14:26:22,176 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 14:26:22,177 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 14:26:22,177 - INFO - functions.get_functions - file size: 2493
+2024-01-14 14:26:22,177 - INFO - functions.get_functions - tree size: 7
+2024-01-14 14:26:22,178 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 14:26:22,180 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 14:26:22,180 - INFO - __main__ - Trying to load functions from ./functions/generated_functions.py
+2024-01-14 14:26:22,180 - INFO - functions.get_functions - file size: 246
+2024-01-14 14:26:22,180 - INFO - functions.get_functions - tree size: 1
+2024-01-14 14:26:22,180 - INFO - functions.get_functions - Looking at function: initialize_twitter_api
+2024-01-14 14:26:22,181 - INFO - __main__ - Loaded 1 functions from ./functions/generated_functions.py
+2024-01-14 14:26:22,181 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 14:26:22,181 - INFO - functions.get_functions - file size: 2971
+2024-01-14 14:26:22,182 - INFO - functions.get_functions - tree size: 10
+2024-01-14 14:26:22,182 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 14:26:22,183 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 14:26:22,184 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 14:26:22,185 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 14:26:22,185 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 14:26:22,186 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 14:26:22,186 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 14:26:22,188 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 14:26:22,188 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 14:26:22,188 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:26:22,188 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:26:22,188 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 14:26:22,188 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 14:26:22,188 - INFO - functions.get_functions - file size: 3250
+2024-01-14 14:26:22,189 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:26:22,189 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 14:26:22,190 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 14:26:22,191 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 14:26:22,191 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 14:26:22,192 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 14:26:22,193 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 14:26:22,193 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 14:26:22,193 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:26:22,193 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:26:22,193 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 14:26:22,194 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 14:26:22,194 - INFO - functions.get_functions - file size: 5276
+2024-01-14 14:26:22,195 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:26:22,196 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 14:26:22,198 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 14:26:22,199 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 14:26:22,201 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 14:26:22,201 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 14:26:22,202 - INFO - functions.prompt_creation - Describing function
+2024-01-14 14:26:22,202 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the function, using the input variables. Make the description succinct though covering its entire functionality using plain english: 
+    
+    def initialize_twitter_api(api_key, api_secret_key, access_token, access_token_secret):
+    auth = tweepy.OAuthHandler(api_key, api_secret_key)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth)
+    return api
+    
+    Description:
+
+
+2024-01-14 14:26:22,207 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the function, using the input variables. Make the description succinct though covering its entire functionality using plain english: \n    \n    def initialize_twitter_api(api_key, api_secret_key, access_token, access_token_secret):\n    auth = tweepy.OAuthHandler(api_key, api_secret_key)\n    auth.set_access_token(access_token, access_token_secret)\n    api = tweepy.API(auth)\n    return api\n    \n    Description:'}], 'model': 'gpt-3.5-turbo-1106'}}
+2024-01-14 14:26:22,225 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 14:26:22,402 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f08ce85ce50>
+2024-01-14 14:26:22,403 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f08ce9ee570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 14:26:22,509 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f08ce086710>
+2024-01-14 14:26:22,510 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:22,510 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:26:22,511 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:26:22,511 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:26:22,511 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:23,734 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:26:23 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1049'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79878'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'91ms'), (b'x-request-id', b'a41998983f9a8d5cef6a212806d5e051'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=UJVP7YY.nsY8L1sForRGPSL7iZY82IC1UX69wsRgzNo-1705260383-1-AR/2b1DfgB22f0fmBGvKY26YSm6tcFGzdnS+w307OGoDdcur+J1JnVJRtFO4WVh+F7LB1FyxzclJSHFrKENFDYQ=; path=/; expires=Sun, 14-Jan-24 19:56:23 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=Af4V7HnzqAGLr3g0GGWy8r0TvlMlNCIVyK991aKnT9Y-1705260383656-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8458452ea98a6a4f-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:26:23,736 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:26:23,736 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:26:23,737 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:26:23,737 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:26:23,737 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:26:23,737 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:26:23,740 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 14:26:23,741 - INFO - __main__ - The following 19 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields', 'initialize_twitter_api']
+2024-01-14 14:26:34,564 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:26:34,586 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the function, using the input variables. Make the description succinct though covering its entire functionality using plain english: \n    \n    def initialize_twitter_api(api_key, api_secret_key, access_token, access_token_secret):\n    auth = tweepy.OAuthHandler(api_key, api_secret_key)\n    auth.set_access_token(access_token, access_token_secret)\n    api = tweepy.API(auth)\n    return api\n    \n    Description:'}, {'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:26:34,589 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:26:34,590 - DEBUG - httpcore.connection - close.complete
+2024-01-14 14:26:34,591 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 14:26:34,793 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f08ce072890>
+2024-01-14 14:26:34,794 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f08ce9ee570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 14:26:35,001 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f08ce072150>
+2024-01-14 14:26:35,002 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:35,002 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:26:35,002 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:26:35,002 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:26:35,003 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:36,643 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:26:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'1484'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79747'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'189ms'), (b'x-request-id', b'6d3ddf13a396846b0c2bd96163c001a2'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8458457cbcae8cbf-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:26:36,643 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:26:36,644 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:26:36,644 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:26:36,644 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:26:36,644 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:26:36,644 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:26:36,647 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n  "function_descriptions": [\n    "Create a function that initializes an email service with provider credentials",\n    "Create a function that generates an email body and subject",\n    "Create a function that sends the email to a specified recipient"\n  ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:26:36,647 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Create a function that initializes an email service with provider credentials
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:26:36,657 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the function, using the input variables. Make the description succinct though covering its entire functionality using plain english: \n    \n    def initialize_twitter_api(api_key, api_secret_key, access_token, access_token_secret):\n    auth = tweepy.OAuthHandler(api_key, api_secret_key)\n    auth.set_access_token(access_token, access_token_secret)\n    api = tweepy.API(auth)\n    return api\n    \n    Description:'}, {'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Create a function that initializes an email service with provider credentials\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-3.5-turbo-1106', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:26:36,659 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:36,660 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:26:36,661 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:26:36,662 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:26:36,662 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:26:37,353 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:26:37 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-1106'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'295'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'80000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'79640'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'270ms'), (b'x-request-id', b'66a50614a27d4cfc582ac666d0439cc4'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845845871acf8cbf-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:26:37,354 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:26:37,354 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:26:37,355 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:26:37,355 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:26:37,355 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:26:37,355 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:26:37,357 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{\n    "function_descriptions": [\n        "Initialize an email service with provider credentials"\n    ]\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:26:37,358 - ERROR - functions.prompt_creation - The json object returned from the language model did not contain the required fields.
+2024-01-14 14:26:37,358 - ERROR - __main__ - Error creating step list for Send an email to my co-worker with email robert@pretension.io
+2024-01-14 14:26:37,478 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:26:37,480 - DEBUG - httpcore.connection - close.complete
+2024-01-14 14:29:24,749 - INFO - __main__ - Skynet started
+2024-01-14 14:29:24,750 - INFO - __main__ - Loading environment variables
+2024-01-14 14:29:24,750 - INFO - functions.file_system_primitives - Setting environment variable DEFAULT_GPT_MODEL to default value gpt-4-1106-preview
+2024-01-14 14:29:24,750 - INFO - functions.file_system_primitives - Setting environment variable FUNCTIONS_FOLDER to default value functions
+2024-01-14 14:29:24,750 - INFO - functions.file_system_primitives - Setting environment variable FUNCTION_INFO_SERIALIZATION_FILES to default value serialized_function_info.json
+2024-01-14 14:29:24,750 - INFO - functions.file_system_primitives - Listing files in directory functions
+2024-01-14 14:29:24,750 - INFO - __main__ - Loaded functions from functions
+2024-01-14 14:29:24,751 - INFO - __main__ - Trying to load functions from ./functions/web_browsing.py
+2024-01-14 14:29:24,751 - INFO - functions.get_functions - file size: 2609
+2024-01-14 14:29:24,752 - INFO - functions.get_functions - tree size: 16
+2024-01-14 14:29:24,961 - INFO - functions.get_functions - Looking at function: get_links
+2024-01-14 14:29:25,153 - INFO - functions.get_functions - Looking at function: process_command
+2024-01-14 14:29:25,154 - INFO - __main__ - Loaded 2 functions from ./functions/web_browsing.py
+2024-01-14 14:29:25,155 - INFO - __main__ - Trying to load functions from ./functions/openai_call.py
+2024-01-14 14:29:25,155 - INFO - functions.get_functions - file size: 2493
+2024-01-14 14:29:25,156 - INFO - functions.get_functions - tree size: 7
+2024-01-14 14:29:25,157 - INFO - functions.get_functions - Looking at function: return_gpt_response
+2024-01-14 14:29:25,160 - INFO - __main__ - Loaded 1 functions from ./functions/openai_call.py
+2024-01-14 14:29:25,161 - INFO - __main__ - Trying to load functions from ./functions/generated_functions.py
+2024-01-14 14:29:25,171 - INFO - functions.get_functions - file size: 246
+2024-01-14 14:29:25,172 - INFO - functions.get_functions - tree size: 1
+2024-01-14 14:29:25,172 - INFO - functions.get_functions - Looking at function: initialize_twitter_api
+2024-01-14 14:29:25,173 - INFO - __main__ - Loaded 1 functions from ./functions/generated_functions.py
+2024-01-14 14:29:25,174 - INFO - __main__ - Trying to load functions from ./functions/file_system_primitives.py
+2024-01-14 14:29:25,176 - INFO - functions.get_functions - file size: 2971
+2024-01-14 14:29:25,177 - INFO - functions.get_functions - tree size: 10
+2024-01-14 14:29:25,178 - INFO - functions.get_functions - Looking at function: read_file
+2024-01-14 14:29:25,180 - INFO - functions.get_functions - Looking at function: write_file
+2024-01-14 14:29:25,181 - INFO - functions.get_functions - Looking at function: append_to_file
+2024-01-14 14:29:25,183 - INFO - functions.get_functions - Looking at function: delete_file
+2024-01-14 14:29:25,186 - INFO - functions.get_functions - Looking at function: list_files_in_directory
+2024-01-14 14:29:25,189 - INFO - functions.get_functions - Looking at function: get_current_working_directory
+2024-01-14 14:29:25,190 - INFO - functions.get_functions - Looking at function: set_env_variables_with_defaults
+2024-01-14 14:29:25,193 - INFO - __main__ - Loaded 7 functions from ./functions/file_system_primitives.py
+2024-01-14 14:29:25,194 - INFO - __main__ - Trying to load functions from ./functions/__init__.py
+2024-01-14 14:29:25,195 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:29:25,195 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:29:25,196 - INFO - __main__ - Loaded 0 functions from ./functions/__init__.py
+2024-01-14 14:29:25,196 - INFO - __main__ - Trying to load functions from ./functions/prompt_creation.py
+2024-01-14 14:29:25,197 - INFO - functions.get_functions - file size: 3250
+2024-01-14 14:29:25,198 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:29:25,204 - INFO - functions.get_functions - Looking at function: return_function_options
+2024-01-14 14:29:25,207 - INFO - functions.get_functions - Looking at function: create_function
+2024-01-14 14:29:25,208 - INFO - functions.get_functions - Looking at function: create_step_list
+2024-01-14 14:29:25,210 - INFO - functions.get_functions - Looking at function: required_fields
+2024-01-14 14:29:25,212 - INFO - functions.get_functions - Looking at function: describe_function
+2024-01-14 14:29:25,217 - INFO - __main__ - Loaded 5 functions from ./functions/prompt_creation.py
+2024-01-14 14:29:25,218 - INFO - __main__ - Trying to load functions from ./functions/system_loop_primatives.py
+2024-01-14 14:29:25,219 - INFO - functions.get_functions - file size: 0
+2024-01-14 14:29:25,219 - INFO - functions.get_functions - tree size: 0
+2024-01-14 14:29:25,220 - INFO - __main__ - Loaded 0 functions from ./functions/system_loop_primatives.py
+2024-01-14 14:29:25,220 - INFO - __main__ - Trying to load functions from ./functions/get_functions.py
+2024-01-14 14:29:25,221 - INFO - functions.get_functions - file size: 5276
+2024-01-14 14:29:25,228 - INFO - functions.get_functions - tree size: 9
+2024-01-14 14:29:25,230 - INFO - functions.get_functions - Looking at function: load_functions_from_file
+2024-01-14 14:29:25,233 - INFO - functions.get_functions - Looking at function: list_functions
+2024-01-14 14:29:25,235 - INFO - functions.get_functions - Looking at function: get_argument_values
+2024-01-14 14:29:25,238 - INFO - __main__ - Loaded 3 functions from ./functions/get_functions.py
+2024-01-14 14:29:25,240 - INFO - system_objects.functions - Loading function infos from serialized_function_info.json
+2024-01-14 14:29:25,242 - INFO - system_objects.functions - Saving function infos to serialized_function_info.json
+2024-01-14 14:29:25,244 - INFO - __main__ - The following 19 function(s) were loaded: ['load_functions_from_file', 'list_functions', 'get_argument_values', 'get_links', 'process_command', 'return_gpt_response', 'read_file', 'write_file', 'append_to_file', 'delete_file', 'list_files_in_directory', 'get_current_working_directory', 'set_env_variables_with_defaults', 'return_function_options', 'create_function', 'create_step_list', 'describe_function', 'required_fields', 'initialize_twitter_api']
+2024-01-14 14:29:36,732 - INFO - functions.openai_call - 
+Sending Prompt:
+Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io
+
+    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes
+
+    return a JSON object with the following property
+    
+    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.
+    
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:29:36,739 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:29:36,756 - DEBUG - httpcore.connection - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-14 14:29:36,967 - DEBUG - httpcore.connection - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fcba7ce60d0>
+2024-01-14 14:29:36,967 - DEBUG - httpcore.connection - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fcba8656570> server_hostname='api.openai.com' timeout=5.0
+2024-01-14 14:29:37,072 - DEBUG - httpcore.connection - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fcba7cf4c50>
+2024-01-14 14:29:37,072 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:37,073 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:29:37,073 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:29:37,074 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:29:37,074 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:41,985 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:29:41 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'4748'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1499853'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'8.467s'), (b'x-request-id', b'3a2d7f80d6a8331b70112bf3784ed116'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=q6pOoch6AA9k7UTBQX2qchBM9gw0WVvmHGT4mck68IY-1705260581-1-AVkdYKZ5oIgs13wU5aLww3KCROcFh1MOEH0AvdS/5cr4m7Jul/wQ8zCsmQTGR1Pm7tURRtrywnr5gdarJXazS/g=; path=/; expires=Sun, 14-Jan-24 19:59:41 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=IvdBuJhFPqoiF_ZQRGXHQcuIF.ZtvtMR91sPi.9TrxI-1705260581924-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'845849eead008cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:29:41,987 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:29:42,019 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:29:42,020 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:29:42,021 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:29:42,022 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:29:42,023 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:29:42,029 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n{\n  "function_descriptions": [\n    "Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.",\n    "Compose email: This function takes the recipient\'s address, subject, and body of the email as inputs and creates an email object ready to be sent.",\n    "Validate email address: This function checks if the given email address is valid to ensure the email can be delivered.",\n    "Send email: This function takes a composed email object and sends it to the specified recipient using the email client.",\n    "Generate result JSON: This function creates and returns a JSON object with details about the success or failure of the email sending operation."\n  ]\n}\n\n\n \n \n\n \n\n \n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n ', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:29:42,032 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:29:42,051 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:29:42,052 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:42,053 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:29:42,053 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:29:42,053 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:29:42,053 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:47,925 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:29:47 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'5688'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1499547'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'26.08s'), (b'x-request-id', b'e18046f0508e04593e8a5211436362a1'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84584a0dcf848cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:29:47,927 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:29:47,927 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:29:47,928 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:29:47,928 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:29:47,929 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:29:47,930 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:29:47,937 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n    \t{\n\t    "required_libraries": ["smtplib", "email"],\n\t    "source_code": "def initialize_email_client(server_address, server_port, username, password):\\n    import smtplib\\n    from email.mime.text import MIMEText\\n    from email.mime.multipart import MIMEMultipart\\n\\n    # Create SMTP session for sending the mail\\n    session = smtplib.SMTP(server_address, server_port)\\n    session.starttls() # enable security\\n    session.login(username, password)\\n    return session"\n\t}\n    ', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:29:47,938 - INFO - __main__ - Make sure the library smtplib is installed
+2024-01-14 14:29:47,939 - INFO - __main__ - Make sure the library email is installed
+2024-01-14 14:29:47,939 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:29:47,941 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Compose email: This function takes the recipient's address, subject, and body of the email as inputs and creates an email object ready to be sent.
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:29:47,950 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': "Create a function that accomplishes the following: Compose email: This function takes the recipient's address, subject, and body of the email as inputs and creates an email object ready to be sent.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    "}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:29:47,953 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:47,954 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:29:47,954 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:29:47,954 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:29:47,955 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:55,810 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:29:55 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'7627'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1499210'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'45.463s'), (b'x-request-id', b'66ca419c2625d437463862abaf8562d9'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84584a32ac648cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:29:55,811 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:29:55,812 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:29:55,812 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:29:55,813 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:29:55,816 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:29:55,816 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:29:55,820 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n{\n  "required_libraries": [\n    "email.mime.text",\n    "email.mime.multipart"\n  ],\n  "source_code": "def compose_email(to_address, subject, body):\\n    # Create a MIMEText object to represent the email\\n    from email.mime.multipart import MIMEMultipart\\n    from email.mime.text import MIMEText\\n\\n    # Create a message object using MIMEMultipart\\n    message = MIMEMultipart()\\n    message[\'To\'] = to_address\\n    message[\'Subject\'] = subject\\n\\n    # Attach the email body to the message. It is assumed body is a plain text\\n    message.attach(MIMEText(body, \'plain\'))\\n\\n    return message"\n}\n', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:29:55,820 - INFO - __main__ - Make sure the library email.mime.text is installed
+2024-01-14 14:29:55,820 - INFO - __main__ - Make sure the library email.mime.multipart is installed
+2024-01-14 14:29:55,820 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:29:55,821 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Validate email address: This function checks if the given email address is valid to ensure the email can be delivered.
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:29:55,829 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': "Create a function that accomplishes the following: Compose email: This function takes the recipient's address, subject, and body of the email as inputs and creates an email object ready to be sent.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    "}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Validate email address: This function checks if the given email address is valid to ensure the email can be delivered.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:29:55,830 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:29:55,831 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:29:55,831 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:29:55,831 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:29:55,831 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:30:01,749 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:30:01 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'5573'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1498778'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'1m10.356s'), (b'x-request-id', b'725352a950caca3a4510ded2f74bd70d'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84584a63ea638cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:30:01,750 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:30:01,750 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:30:01,751 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:30:01,752 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:30:01,752 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:30:01,752 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:30:01,756 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n{\n    "required_libraries": ["re"],\n    "source_code": "def validate_email_address(email_address):\\n    # Using a simple regex pattern to validate email address.\\n    # This pattern can be replaced or modified to suit more specific validation requirements.\\n    pattern = r\'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\\\.[a-zA-Z0-9-.]+$)\'\\n    if re.match(pattern, email_address):\\n        return True\\n    else:\\n        return False"\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:30:01,756 - INFO - __main__ - Make sure the library re is installed
+2024-01-14 14:30:01,756 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:30:01,757 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Send email: This function takes a composed email object and sends it to the specified recipient using the email client.
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:30:01,767 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': "Create a function that accomplishes the following: Compose email: This function takes the recipient's address, subject, and body of the email as inputs and creates an email object ready to be sent.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    "}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Validate email address: This function checks if the given email address is valid to ensure the email can be delivered.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Send email: This function takes a composed email object and sends it to the specified recipient using the email client.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:30:01,769 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:30:01,769 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:30:01,770 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:30:01,770 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:30:01,770 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:30:06,462 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:30:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'4517'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1498255'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'1m40.483s'), (b'x-request-id', b'c361922b97a117450ba300657502ae8a'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84584a890f808cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:30:06,463 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:30:06,463 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:30:06,463 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:30:06,463 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:30:06,464 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:30:06,464 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:30:06,468 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n{\n    "required_libraries": ["smtplib"],\n    "source_code": "def send_email(email_obj, email_client):\\n    \\"\\"\\"Sends an email object using the given email client.\\n\\n    Args:\\n        email_obj: An email object that contains the recipient address, subject, and body.\\n        email_client: An initialized email client configured to send emails.\\n\\n    Returns:\\n        Sends the email and does not return a value.\\n    \\"\\"\\"\\n    try:\\n        # Use the send_message method of email_client to send the email\\n        email_client.send_message(email_obj)\\n        print(\'Email sent successfully\')\\n    except Exception as e:\\n        print(\'Failed to send email:\', e)\\n"\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:30:06,476 - INFO - __main__ - Make sure the library smtplib is installed
+2024-01-14 14:30:06,477 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:30:06,479 - INFO - functions.openai_call - 
+Sending Prompt:
+Create a function that accomplishes the following: Generate result JSON: This function creates and returns a JSON object with details about the success or failure of the email sending operation.
+
+    Using the python programming language.
+
+    it should return a json object with the following properties:
+
+    required_libraries: a list of strings
+
+    source_code: a string containing just the function definition and the function body (no imports or anything else)
+
+    JSON OBJECT:
+    
+
+
+2024-01-14 14:30:06,507 - DEBUG - openai._base_client - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'Describe the steps that would need to be called to accomplishes the following: Send an email to my co-worker with email robert@pretension.io\n\n    When coming up with this list, describe "abstract" functions that will be re-useable for other purposes\n\n    return a JSON object with the following property\n    \n    function_descriptions: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do.\n    \n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Initialize email client: This function initializes the email client and sets up the connection with necessary credentials for sending an email.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': "Create a function that accomplishes the following: Compose email: This function takes the recipient's address, subject, and body of the email as inputs and creates an email object ready to be sent.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    "}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Validate email address: This function checks if the given email address is valid to ensure the email can be delivered.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Send email: This function takes a composed email object and sends it to the specified recipient using the email client.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}, {'role': 'user', 'content': 'Create a function that accomplishes the following: Generate result JSON: This function creates and returns a JSON object with details about the success or failure of the email sending operation.\n\n    Using the python programming language.\n\n    it should return a json object with the following properties:\n\n    required_libraries: a list of strings\n\n    source_code: a string containing just the function definition and the function body (no imports or anything else)\n\n    JSON OBJECT:\n    '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2024-01-14 14:30:06,510 - DEBUG - httpcore.http11 - send_request_headers.started request=<Request [b'POST']>
+2024-01-14 14:30:06,511 - DEBUG - httpcore.http11 - send_request_headers.complete
+2024-01-14 14:30:06,513 - DEBUG - httpcore.http11 - send_request_body.started request=<Request [b'POST']>
+2024-01-14 14:30:06,514 - DEBUG - httpcore.http11 - send_request_body.complete
+2024-01-14 14:30:06,516 - DEBUG - httpcore.http11 - receive_response_headers.started request=<Request [b'POST']>
+2024-01-14 14:30:08,815 - DEBUG - httpcore.http11 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 14 Jan 2024 19:30:08 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'user-codnuftfktazlnfurmq8wq2u'), (b'openai-processing-ms', b'2082'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'1500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'1497568'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'2m20.036s'), (b'x-request-id', b'a5855963c2881a136b097885539146c3'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'84584aa6ab1c8cb1-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-01-14 14:30:08,816 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-14 14:30:08,816 - DEBUG - httpcore.http11 - receive_response_body.started request=<Request [b'POST']>
+2024-01-14 14:30:08,817 - DEBUG - httpcore.http11 - receive_response_body.complete
+2024-01-14 14:30:08,817 - DEBUG - httpcore.http11 - response_closed.started
+2024-01-14 14:30:08,817 - DEBUG - httpcore.http11 - response_closed.complete
+2024-01-14 14:30:08,818 - DEBUG - openai._base_client - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2024-01-14 14:30:08,820 - INFO - functions.openai_call - Converting response Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='\n{\n    "required_libraries": ["json"],\n    "source_code": "def generate_result_json(status, message):\\n    result = { \'status\': status, \'message\': message }\\n    return json.dumps(result)"\n}', role='assistant', function_call=None, tool_calls=None)) to json object
+2024-01-14 14:30:08,820 - INFO - __main__ - Make sure the library json is installed
+2024-01-14 14:30:08,820 - INFO - functions.file_system_primitives - Writing to file ./functions/generated_functions.py
+2024-01-14 14:34:03,550 - DEBUG - httpcore.connection - close.started
+2024-01-14 14:34:03,550 - DEBUG - httpcore.connection - close.complete
