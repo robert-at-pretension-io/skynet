@@ -5,8 +5,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 class FunctionInfo:
-    def __init__(self, function_name, file_location, source_code, description):
-        self.name = function_name
+    def __init__(self, name, file_location, source_code, description):
+        self.name = name
         self.file_location = file_location
         self.source_code = source_code
         self.description = description
@@ -14,7 +14,7 @@ class FunctionInfo:
     def serialize(self):
         """Serializes the instance to a JSON string."""
         data = {
-            'function_name': self.name,
+            'name': self.name,
             'file_location': self.file_location,
             'source_code': self.source_code,
             'description': self.description
@@ -25,11 +25,11 @@ class FunctionInfo:
     def deserialize(json_str):
         """Deserializes a JSON string into a FunctionInfo instance."""
         data = json.loads(json_str)
-        function_name = data['function_name']
+        name = data['name']
         file_location = data['file_location']
         source_code = data['source_code']
         description = data['description']
-        return FunctionInfo(function_name, file_location, source_code, description)
+        return FunctionInfo(name, file_location, source_code, description)
 
     @staticmethod
     def _type_to_str(type_obj):

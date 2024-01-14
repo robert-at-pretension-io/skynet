@@ -45,7 +45,7 @@ def delete_file(file_path):
     except OSError:
         print(f"Error deleting the file {file_path}.")
 
-def list_files_in_directory(directory):
+def list_files_in_directory(directory=""):
     """Lists all files in a given directory.
 
     Args:

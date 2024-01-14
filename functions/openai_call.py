@@ -2,6 +2,8 @@ import json
 from openai import OpenAI
 import os
 
+
+
 client = OpenAI(
     # Defaults to os.environ.get("OPENAI_API_KEY")
 )
@@ -47,7 +49,7 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
         chat_completion = client.chat.completions.create(
             model=model,
             messages=message_log,
-            response_format='json_object'
+            response_format={ "type": "json_object" },
         )
         try:
             return_value = json.loads(chat_completion.choices[0].message.content)
@@ -58,7 +60,6 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
         chat_completion = client.chat.completions.create(
             model=model,
             messages=message_log,
-            response_format='json_object'
         )
         return chat_completion.choices[0].message.content
 

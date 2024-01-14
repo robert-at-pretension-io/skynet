@@ -1,5 +1,8 @@
-from ..system_objects.functions import FunctionInfo
-from openai_call import return_gpt_response
+from system_objects.functions import FunctionInfo
+from functions.openai_call import return_gpt_response
+import logging
+
+logger = logging.getLogger(__name__)
 
 def return_function_options(functions: [FunctionInfo]) -> str:
     function_options = ""
@@ -36,3 +39,20 @@ def create_step_list(goal: str) -> object:
         return return_gpt_response(prompt=prompt, return_json_oject=True)
     except Exception as e:
         raise ValueError(f"Error creating step list: {e}")
+
+
+def describe_function(function_string):
+    """Returns a description of the function."""
+    # Formulate prompt to GPT:
+    prompt = f"""Describe the function, using the input variables. Make the description succinct though covering its entire functionality using plain english: 
+    
+    {function_string}
+    
+    Description:"""
+    try:
+
+        logger.info("Describing function")
+        return return_gpt_response(prompt=prompt);
+    except Exception as e:
+        logger.error(f"Error describing function: {e}")
+        raise ValueError("Error describing function.")

@@ -1,60 +1,79 @@
 import ast
 import inspect
 import importlib
-from openai_call import return_gpt_response
 
-def addition(a: int, b: int):
-    return a + b
+from  system_objects.functions import FunctionInfo
+import logging
 
-import ast
-import inspect
-import importlib
+logger = logging.getLogger(__name__)
 
-from ..system_objects.functions import FunctionInfo
 
 def load_functions_from_file(file_path) -> [FunctionInfo]:
-    with open(file_path, 'r') as file:
-        file_contents = file.read()
+    # Print the current directory
+    # current_directory = os.getcwd()
+    # logger.info(f"Current directory: {current_directory}")
 
-    tree = ast.parse(file_contents)
-    functions = []
-    imported_modules = {}
+    try:
+        with open(file_path, 'r') as file:
+            file_contents = file.read()
+            logger.info(f"file size: {len(file_contents)}")
+            try:
+                tree = ast.parse(file_contents, type_comments=True)  
 
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for name in node.names:
-                imported_modules[name.name] = importlib.import_module(name.name)
-        elif isinstance(node, ast.ImportFrom):
-            module = importlib.import_module(node.module)
-            for name in node.names:
-                imported_modules[name.name] = getattr(module, name.name)
+                logger.info(f"tree size: {len(tree.body)}")
 
-        if isinstance(node, ast.FunctionDef):
-            func_name = node.name
-            func_code = compile(ast.Module(body=[node], type_ignores=[]), filename="<ast>", mode="exec")
-            temp_namespace = {**imported_modules}  # Use imported modules
-            exec(func_code, temp_namespace)
-            func = temp_namespace[func_name]
-            sig = inspect.signature(func)
-            arg_types = {param_name: param.annotation for param_name, param in sig.parameters.items()}
+                functions = []
+                imported_modules = {}
 
-            # Get source code of the function
-            source_code = inspect.getsource(func)
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.Import):
+                        for name in node.names:
+                            imported_modules[name.name] = importlib.import_module(name.name)
+                    elif isinstance(node, ast.ImportFrom):
+                        module = importlib.import_module(node.module)
+                        for name in node.names:
+                            imported_modules[name.name] = getattr(module, name.name)
+
+                    if isinstance(node, ast.FunctionDef):
+                        logger.info(f"Looking at function: {node.name}")
+                        func_name = node.name
+                        func_code = compile(ast.Module(body=[node], type_ignores=[]), filename="<ast>", mode="exec")
+                        temp_namespace = {**imported_modules}  # Use imported modules
+                        exec(func_code, temp_namespace)
+                        func = temp_namespace[func_name]
+                        sig = inspect.signature(func)
+                        arg_types = {param_name: param.annotation for param_name, param in sig.parameters.items()}
+
+                        # Get source code of the function
+                        source_code = ast.unparse(node)
 
 
-            function_info = FunctionInfo(func_name, file_path, source_code, "")
+                        function_info = FunctionInfo(func_name, file_path, source_code, "")
 
 
-            functions.append(function_info)
+                        functions.append(function_info)
 
-    return functions
+                return functions
+            except SyntaxError as e:
+                logger.error(f"Syntax error in {file_path}: {e}")
+                return []
+            except Exception as e:
+                logger.error(f"Error loading functions from {file_path}: {e}")
+                return []
+    except FileNotFoundError:
+        logger.error(f"The file {file_path} was not found.")
+        return []
+    except IOError:
+        logger.error(f"Error reading the file {file_path}.")
+        return []
+    
 
 
 def list_functions(functions):
-    print("Available functions:")
+    logger.info("Available functions:")
     for func_name, func_info in functions.items():
         arg_types = func_info['arg_types']
-        print(f"Function: {func_name}, Argument Types: {arg_types}")
+        logger.info(f"Function: {func_name}, Argument Types: {arg_types}")
 
 def get_argument_values(arg_types):
     args = []
@@ -80,11 +99,11 @@ def get_argument_values(arg_types):
 
                 break  # Break the loop if no error
             except ValueError as e:
-                print(f"Invalid input: {e}")
+                logger.error(f"Invalid input: {e}")
             except TypeError as e:
-                print(e)
+                logger.error(e)
             except Exception as e:
-                print(f"Error processing input: {e}")
+                logger.error(f"Error processing input: {e}")
 
         args.append(converted_value)
     return args
@@ -93,7 +112,7 @@ def get_argument_values(arg_types):
 # loaded_functions = load_functions_from_file(file_path)
 
 # # Loop to ask which function to run
-# while True:
+# while T"""  """rue:
 #     list_functions(loaded_functions)
 #     func_name = input("Enter the function name to run (or 'exit' to quit): ")
     
@@ -105,7 +124,7 @@ def get_argument_values(arg_types):
 #         func = func_info['function']
 #         arg_types = func_info['arg_types']
 
-#         print(f"Function: {func_name}, Argument Types: {arg_types}")
+#         logger.info(f"Function: {func_name}, Argument Types: {arg_types}")
 
 #         # Call the function to get argument values
 #         args = get_argument_values(arg_types)
@@ -115,19 +134,7 @@ def get_argument_values(arg_types):
 #         converted_args = args
 
 #         result = func(*converted_args, **kwargs)
-#         print("Result:", result)
+#         logger.info("Result:", result)
 #     else:
-#         print(f"Function '{func_name}' not found.")
+#         logger.info(f"Function '{func_name}' not found.")
 
-def describe_function(function_string):
-    """Returns a description of the function."""
-    # Formulate prompt to GPT:
-    prompt = f"""Describe the function, using the input variables. Make the description succinct though covering its entire functionalijty using plain english: 
-    
-    {function_string}
-    
-    Description:"""
-    try:
-        return return_gpt_response(prompt=prompt);
-    except:
-        raise ValueError("Error describing function.")
