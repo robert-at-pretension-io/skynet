@@ -7,7 +7,9 @@ logger = logging.getLogger(__name__)
 def return_function_options(functions: [FunctionInfo]) -> str:
     function_options = ""
     for function in functions:
-        function_options += f"{function.name} : {function.description}\n"
+        function_options += f"""
+    {function.name} : {function.description}
+    """
     return function_options
 
 def create_function(function_objective: str, language: str) -> object:
@@ -32,22 +34,18 @@ def create_function(function_objective: str, language: str) -> object:
     except Exception as e:
         raise ValueError(f"Error creating function: {e}")
 
-def create_step_list(goal: str, functions: [str]) -> object:
-    prompt = f"""Create a step list that accomplishes the following: {goal}
+def create_step_list(goal: str) -> object:
+    prompt = f"""Create a list describing atomic functions that would need to be called to accomplishes the following: {goal}
 
-    Note that you can only use the command line on the ubuntu operating system, and you can only use the following python functions:
-
-    {return_function_options(functions)}
+    When coming up with this list, please try to describe "abstract" functions that will be re-useable for other purposes
 
     The json object returned should have the following properties:
-    step_list: a list of strings describing the steps to accomplish the goal
-    """
-
-
+    
+    function_list: a list of strings that describe the functions used to accomplish the goal. Each list item should just describe in plain english what the functions should do."""
     try:
         json_object =  return_gpt_response(prompt=prompt, return_json_oject=True)
 
-        if not required_fields(["step_list"], json_object):
+        if not required_fields(["function_list"], json_object):
             logger.error("The json object returned from the language model did not contain the required fields.")
             raise ValueError("The json object returned from GPT-3 did not contain the required fields.")
         return json_object

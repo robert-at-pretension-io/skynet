@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 env_vars_defaults = {
     "OPENAI_API_KEY": "error",
     "DEFAULT_GPT_MODEL": "gpt-3.5-turbo-1106",
+    # "DEFAULT_GPT_MODEL": "gpt-4-1106-preview",
     "FUNCTIONS_FOLDER": "functions",
     "FUNCTION_INFO_SERIALIZATION_FILES": "serialized_function_info.json",
 }
@@ -114,10 +115,11 @@ def main():
             break
         else:
             try:
-                json_object = create_step_list(user_input, functions)
-                print(f"Here are the steps to accomplish {user_input}:")
-                for step in json_object["step_list"]:
-                    print(step)
+                json_object = create_step_list(user_input)
+                print(f"Here are the functions needed to accomplish {user_input}:")
+                for required_function in json_object["function_list"]:
+                    print(required_function)
+
             except: 
                 logger.error(f"Error creating step list for {user_input}")
                 raise ValueError(f"Error creating step list for {user_input}")

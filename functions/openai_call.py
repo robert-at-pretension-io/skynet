@@ -57,7 +57,7 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
             response_format={ "type": "json_object" },
         )
         try:
-            logger.info(f"Converting response {chat_completion.choices[0].message.content} to json object")
+            logger.info(f"Converting response {chat_completion.choices[0]} to json object")
             return_value = json.loads(chat_completion.choices[0].message.content)
             return return_value
         except:
