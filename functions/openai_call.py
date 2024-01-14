@@ -2,6 +2,10 @@ import json
 from openai import OpenAI
 import os
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 
 client = OpenAI(
@@ -43,6 +47,7 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
     # if the prompt is not empty, add it to the message log
     if prompt != "":
         message_log.append({"role": "user", "content": prompt})
+        logger.info(f"\nSending Prompt:\n{prompt}\n\n")
     # Send the message log to the AI
         
     if return_json_oject:
@@ -52,6 +57,7 @@ def return_gpt_response(message_log = [], prompt = "", model = "", return_json_o
             response_format={ "type": "json_object" },
         )
         try:
+            logger.info(f"Converting response {chat_completion.choices[0].message.content} to json object")
             return_value = json.loads(chat_completion.choices[0].message.content)
             return return_value
         except:

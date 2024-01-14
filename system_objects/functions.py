@@ -57,11 +57,18 @@ def load_function_infos_from_file(file_path):
             serialized_function_infos = json.load(file)
             return [FunctionInfo.deserialize(json_str) for json_str in serialized_function_infos]
     except FileNotFoundError:
-        print(f"The file {file_path} was not found.")
+        logger.error(f"The file {file_path} was not found.")
         return []
     except IOError as e:
-        print(f"Error reading the file {file_path}: {e}")
+        logger.error(f"Error reading the file {file_path}: {e}")
         return []
+    
+def serialize_to_json(obj):
+    if hasattr(obj, "serialize"):
+        return obj.serialize()
+    else:
+        raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
+
 
 def save_function_infos_to_file(function_infos, file_path):
     """
@@ -74,6 +81,6 @@ def save_function_infos_to_file(function_infos, file_path):
     try:
         logger.info(f"Saving function infos to {file_path}")
         with open(file_path, 'w') as file:
-            json.dump(function_infos, file)
+            json.dump(function_infos, file, default=serialize_to_json)
     except IOError as e:
         print(f"Error writing to the file {file_path}: {e}")

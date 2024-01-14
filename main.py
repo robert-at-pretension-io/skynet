@@ -1,7 +1,7 @@
 
 from functions.get_functions import load_functions_from_file
 
-from functions.prompt_creation import describe_function
+from functions.prompt_creation import create_step_list, describe_function
 
 from functions.file_system_primitives import list_files_in_directory, set_env_variables_with_defaults
 
@@ -47,9 +47,12 @@ def load_functions() -> [FunctionInfo]:
             file_path = os.path.join("./", env_vars_defaults["FUNCTIONS_FOLDER"], file)
             try: 
                 logger.info(f"Trying to load functions from {file_path}")
-                functions : [FunctionInfo]= load_functions_from_file( file_path)
+                #append to the functions array
+                more_functions = load_functions_from_file(file_path)
 
-                logger.info(f"Loaded {len(functions)} functions from {file_path}")
+                functions.extend(more_functions)
+
+                logger.info(f"Loaded {len(more_functions)} functions from {file_path}")
             except Exception as e:
                 logger.error(f"Error loading functions from {file_path}: {e}")
                 raise ValueError(f"Error loading functions from {file}: {e}")
@@ -98,6 +101,27 @@ def main():
     logger.info("Skynet started")
     load_env_vars(env_vars_defaults)
     functions = load_functions()
+
+    logger.info(f"The following {len(functions)} function(s) were loaded: {[function.name for function in functions]}")
+
+    # Start the chat loop
+    keep_going = True
+    while keep_going:
+        user_input = input("What goal would you like to accomplish?")
+
+        if user_input == "bye":
+            keep_going = False
+            break
+        else:
+            try:
+                json_object = create_step_list(user_input, functions)
+                print(f"Here are the steps to accomplish {user_input}:")
+                for step in json_object["step_list"]:
+                    print(step)
+            except: 
+                logger.error(f"Error creating step list for {user_input}")
+                raise ValueError(f"Error creating step list for {user_input}")
+
 
 if __name__ == '__main__':
     main()
